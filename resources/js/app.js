@@ -16,6 +16,11 @@ $(function() {
 		$('#markdown_preview').html(html);
 	});
 
+	// 個別の記事画面のマークダウンをHTMLに変換する
+    var target = $('.item-body')
+    var html = marked(getHtml(target.html()));
+    $('.item-body').html(html);
+
 	// 比較演算子が &lt; 等になるので置換
 	function getHtml(html) {
 		html = html.replace(/&lt;/g, '<');

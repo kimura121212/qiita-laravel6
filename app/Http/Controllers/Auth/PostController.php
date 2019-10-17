@@ -36,6 +36,11 @@ class PostController extends Controller
             'tag3' => $tag3,
             'body' => $request->article,
         ]);
-        return redirect('/');
+        return redirect("/drafts/{$article->id}");
+    }
+    public function showArticle($id)
+    {
+        $article = Post::where('id', $id)->first();
+        return view('auth.item', compact('article'));
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.common')
 @section('content')
 <form class="post-page-wrapper" action="/drafts/new" method="post">
-@csrf
+{{ csrf_field() }}
     @if($errors->first('title'))
         <div class="validation">{{ $errors->first('title') }}</div>
     @endif

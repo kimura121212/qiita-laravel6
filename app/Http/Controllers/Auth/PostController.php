@@ -14,6 +14,12 @@ class PostController extends Controller
         return view('auth.drafts.new');
     }
 
+    public function showTopPage()
+    {
+        $articles = Post::orderBy('created_at', 'asc')->get();
+        return view('top', compact('articles'));
+    }
+
     public function postArticle(Request $request)
     {
         // バリデーション

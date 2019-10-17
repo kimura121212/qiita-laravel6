@@ -19,6 +19,7 @@
 
 
     <ul class="navbar-nav ml-auto mr-5">
+    @if (Auth::check())
       <li class="nav-item ml-2">
         <a class="nav-link text-white" href="#">ストック一覧</a>
       </li>
@@ -28,11 +29,10 @@
       <li class="nav-item ml-2">
         <a class="nav-link text-white" href="#">0</a>
       </li>
-      <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        アイコン
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li class="nav-item ml-2">
+        <a href="#" class="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">アイコン</a>
+      </li>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">マイページ</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">下書き一覧</a>
@@ -53,12 +53,14 @@
           </form>
         </div>
       </li>
+      @else
       <li class="nav-item ml-2">
         <a class="nav-link text-white" id="register" href="/register">ユーザ登録</a>
       </li>
       <li class="nav-item ml-2">
         <a class="nav-link text-white" href="#">ログイン</a>
       </li>
+      @endif
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
